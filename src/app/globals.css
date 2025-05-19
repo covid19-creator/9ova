@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Background Colors */
+    --background: 220 25% 97%; /* #F7F8FA - Soft blue-gray */
+    --foreground: 222 47% 11%; /* #1E293B - Deep slate */
+
+    /* Card Colors */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 222 47% 11%; /* #1E293B */
+
+    /* Popover Colors */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 222 47% 11%; /* #1E293B */
+
+    /* Primary Colors - Deep Blue */
+    --primary: 221 83% 53%; /* #2563EB - Royal blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --primary-hover: 221 83% 43%; /* #1D4ED8 - Darker blue */
+
+    /* Secondary Colors - Soft Mint */
+    --secondary: 160 84% 39%; /* #10B981 - Mint green */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --secondary-hover: 160 84% 29%; /* #059669 - Darker mint */
+
+    /* Muted Colors */
+    --muted: 220 14% 96%; /* #F1F5F9 - Light blue-gray */
+    --muted-foreground: 215 16% 47%; /* #64748B - Muted text */
+
+    /* Accent Colors - Warm Coral */
+    --accent: 24 95% 53%; /* #EA580C - Warm coral */
+    --accent-foreground: 0 0% 100%; /* White */
+    --accent-hover: 24 95% 43%; /* #C2410C - Darker coral */
+
+    /* Success Colors - Emerald */
+    --success: 142 76% 36%; /* #15803D - Emerald */
+    --success-foreground: 0 0% 100%; /* White */
+    --success-hover: 142 76% 26%; /* #166534 - Darker emerald */
+
+    /* Warning Colors - Amber */
+    --warning: 48 96% 53%; /* #D97706 - Amber */
+    --warning-foreground: 0 0% 100%; /* White */
+    --warning-hover: 48 96% 43%; /* #B45309 - Darker amber */
+
+    /* Destructive Colors */
+    --destructive: 0 84% 60%; /* #EF4444 - Red */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --destructive-hover: 0 84% 50%; /* #DC2626 - Darker red */
+
+    /* Info Colors - Sky Blue */
+    --info: 199 89% 48%; /* #0284C7 - Sky blue */
+    --info-foreground: 0 0% 100%; /* White */
+    --info-hover: 199 89% 38%; /* #0369A1 - Darker sky blue */
+
+    /* Border and Input Colors */
+    --border: 220 13% 91%; /* #E2E8F0 - Light blue-gray */
+    --input: 220 13% 91%; /* #E2E8F0 */
+    --ring: 221 83% 53%; /* #2563EB - Matching primary */
+
+    /* Border Radius */
+    --radius: 0.5rem;
+
+    /* Chart Colors - Professional Palette */
+    --chart-1: 221 83% 53%; /* #2563EB - Royal blue */
+    --chart-2: 160 84% 39%; /* #10B981 - Mint green */
+    --chart-3: 24 95% 53%; /* #EA580C - Warm coral */
+    --chart-4: 199 89% 48%; /* #0284C7 - Sky blue */
+    --chart-5: 48 96% 53%; /* #D97706 - Amber */
+    --chart-6: 142 76% 36%; /* #15803D - Emerald */
+    --chart-7: 262 83% 58%; /* #7C3AED - Purple */
+    --chart-8: 215 16% 47%; /* #64748B - Muted blue */
+
+    /* CTA Colors */
+    --cta-background: 221 83% 53%; /* #2563EB - Royal blue */
+    --cta-foreground: 0 0% 100%; /* White */
+    --cta-hover: 221 83% 43%; /* #1D4ED8 - Darker blue */
+
+    /* Gradient Colors - Professional */
+    --gradient-start: 221 83% 53%; /* #2563EB - Royal blue */
+    --gradient-middle: 160 84% 39%; /* #10B981 - Mint green */
+    --gradient-end: 24 95% 53%; /* #EA580C - Warm coral */
+
+    /* Status Colors */
+    --status-active: 142 76% 36%; /* #15803D - Emerald */
+    --status-pending: 48 96% 53%; /* #D97706 - Amber */
+    --status-inactive: 215 16% 47%; /* #64748B - Muted blue */
+    --status-error: 0 84% 60%; /* #EF4444 - Red */
+
+    /* Sidebar colors - Light Theme */
+    --sidebar-background: 0 0% 98%; 
+    --sidebar-foreground: 0 0% 9%; 
+    --sidebar-primary: 0 0% 9%; 
+    --sidebar-primary-foreground: 0 0% 98%; 
+    --sidebar-accent: 0 0% 94%; 
+    --sidebar-accent-foreground: 0 0% 9%; 
+    --sidebar-border: 0 0% 85%; 
+    --sidebar-ring: 0 0% 9%; 
+    
+    /* Background Colors */
+    --background-primary: #F5F7FA;
+    --background-secondary: #F0F4F8;
+    --background-card: #FFFFFF;
+
+    /* Text Colors */
+    --text-primary: #1A1F36;
+    --text-secondary: #4A5568;
+    --text-accent: #2D3748;
+
+    /* Accent Colors */
+    --accent-primary: #2563EB;
+    --accent-secondary: #3B82F6;
+    --accent-tertiary: #60A5FA;
+  }
+
+  .dark {
+    --background: 222 47% 11%; /* #1E293B - Deep slate */
+    --foreground: 220 14% 98%; /* #F8FAFC */
+
+    --card: 222 47% 15%; /* Slightly lighter than background */
+    --card-foreground: 220 14% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 220 14% 98%;
+
+    --primary: 221 83% 53%; /* #2563EB - Royal blue */
+    --primary-foreground: 222 47% 11%;
+    --primary-hover: 221 83% 63%; /* Lighter blue for hover */
+
+    --secondary: 160 84% 39%; /* #10B981 - Mint green */
+    --secondary-foreground: 222 47% 11%;
+    --secondary-hover: 160 84% 49%; /* Lighter mint for hover */
+
+    --muted: 222 47% 20%;
+    --muted-foreground: 215 16% 70%;
+
+    --accent: 24 95% 53%; /* #EA580C - Warm coral */
+    --accent-foreground: 220 14% 98%;
+    --accent-hover: 24 95% 63%; /* Lighter coral for hover */
+
+    --success: 142 76% 36%; /* #15803D - Emerald */
+    --success-foreground: 220 14% 98%;
+    --success-hover: 142 76% 46%; /* Lighter emerald for hover */
+
+    --warning: 48 96% 53%; /* #D97706 - Amber */
+    --warning-foreground: 220 14% 98%;
+    --warning-hover: 48 96% 63%; /* Lighter amber for hover */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 14% 98%;
+    --destructive-hover: 0 84% 70%;
+
+    --info: 199 89% 48%; /* #0284C7 - Sky blue */
+    --info-foreground: 220 14% 98%;
+    --info-hover: 199 89% 58%; /* Lighter sky blue for hover */
+
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 221 83% 53%;
+
+    /* Status Colors - Dark Mode */
+    --status-active: 142 76% 46%; /* Lighter emerald */
+    --status-pending: 48 96% 63%; /* Lighter amber */
+    --status-inactive: 215 16% 70%; /* Lighter muted blue */
+    --status-error: 0 84% 70%; /* Lighter red */
+
+    /* Sidebar colors - Dark Theme (Original) */
+    --sidebar-background: 212 65% 13%; 
+    --sidebar-foreground: 220 61% 91%;
+    --sidebar-primary: 168 100% 70%;
+    --sidebar-primary-foreground: 212 68% 11%;
+    --sidebar-accent: 212 50% 25%;
+    --sidebar-accent-foreground: 220 61% 91%;
+    --sidebar-border: 212 50% 30%;
+    --sidebar-ring: 168 100% 70%;
+    
+    /* Chart colors - Dark Theme (Original) */
+    --chart-1: 168 100% 70%; /* Teal */
+    --chart-2: 220 61% 91%; /* Light Gray */
+    --chart-3: 212 50% 55%; /* Brighter Muted Blue */
+    --chart-4: 180 80% 60%; /* Cyan variant */
+    --chart-5: 150 70% 65%; /* Greenish Teal */
+
+    /* Bright Green for CTA - Dark mode (if needed, but design is light) */
+    --cta-background: 80 100% 60%; 
+    --cta-foreground: 0 0% 13%; 
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-[var(--text-primary)];
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-card text-card-foreground rounded-lg shadow-sm hover:shadow-md transition-all duration-200;
+  }
+
+  .section {
+    @apply bg-background;
+  }
+
+  .section-alt {
+    @apply bg-muted;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-middle))] to-[hsl(var(--gradient-end))];
+  }
+
+  .gradient-border {
+    @apply relative;
+    &::before {
+      content: '';
+      @apply absolute inset-0 rounded-lg p-[1px] bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-middle))] to-[hsl(var(--gradient-end))] -z-10 opacity-50;
+    }
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary-hover))] transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary-hover))] transition-colors duration-200;
+  }
+
+  .btn-accent {
+    @apply bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] hover:bg-[hsl(var(--accent-hover))] transition-colors duration-200;
+  }
+
+  .btn-success {
+    @apply bg-[hsl(var(--success))] text-[hsl(var(--success-foreground))] hover:bg-[hsl(var(--success-hover))] transition-colors duration-200;
+  }
+
+  .btn-warning {
+    @apply bg-[hsl(var(--warning))] text-[hsl(var(--warning-foreground))] hover:bg-[hsl(var(--warning-hover))] transition-colors duration-200;
+  }
+
+  .btn-destructive {
+    @apply bg-[hsl(var(--destructive))] text-[hsl(var(--destructive-foreground))] hover:bg-[hsl(var(--destructive-hover))] transition-colors duration-200;
+  }
+
+  .btn-info {
+    @apply bg-[hsl(var(--info))] text-[hsl(var(--info-foreground))] hover:bg-[hsl(var(--info-hover))] transition-colors duration-200;
+  }
+
+  /* Link Styles */
+  .link-primary {
+    @apply text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-hover))] transition-colors duration-200;
+  }
+
+  .link-secondary {
+    @apply text-[hsl(var(--secondary))] hover:text-[hsl(var(--secondary-hover))] transition-colors duration-200;
+  }
+
+  .link-accent {
+    @apply text-[hsl(var(--accent))] hover:text-[hsl(var(--accent-hover))] transition-colors duration-200;
+  }
+
+  /* Status Badge Styles */
+  .badge-active {
+    @apply bg-[hsl(var(--status-active))] text-white;
+  }
+
+  .badge-pending {
+    @apply bg-[hsl(var(--status-pending))] text-white;
+  }
+
+  .badge-inactive {
+    @apply bg-[hsl(var(--status-inactive))] text-white;
+  }
+
+  .badge-error {
+    @apply bg-[hsl(var(--status-error))] text-white;
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 8s ease infinite;
+}
