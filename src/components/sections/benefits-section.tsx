@@ -8,25 +8,25 @@ const benefits = [
   {
     icon: Zap,
     title: 'Fast turnaround',
-    description: 'We focus on one client at a time, delivering exceptional results fast, without compromising on quality.',
+    description: 'Our portfolio speaks for itself. Here are just a few examples of how we’ve helped businesses like yours achieve their digital goals.',
     gradient: 'from-blue-500 to-cyan-500',
   },
   {
     icon: PenTool,
     title: 'Tailored design',
-    description: 'We emphasise delivering unique designs, ensuring your brand stands out with a distinct visual identity.',
+    description: 'Unique, brand-reflecting designs that increase engagement and stand out from the competition',
     gradient: 'from-purple-500 to-pink-500',
   },
   {
     icon: BarChartHorizontalBig,
     title: 'Scalable solutions',
-    description: 'We can integrate new features, revamp content and adapt your project to follow the latest trends.',
+    description: 'Built to grow with your business, supporting up to 10,000 users and beyond.',
     gradient: 'from-orange-500 to-red-500',
   },
   {
     icon: CircleDot,
     title: 'Fixed price',
-    description: 'Access a range of web services at a fixed price, making it easier to budget and control expenses.',
+    description: 'Transparent pricing with no hidden fees, making it easier to budget and plan.',
     gradient: 'from-green-500 to-emerald-500',
   },
 ];
@@ -54,19 +54,19 @@ const approaches = [
   {
     icon: MessageSquareText,
     title: 'Consulting',
-    description: "We're asking some questions to understand your goals, design preferences and target audience. This is the foundation settlement.",
+    description: "We start by understanding your goals, design preferences, and target audience.",
     gradient: 'from-indigo-500 to-purple-500',
   },
   {
     icon: ClipboardCheck,
     title: 'Collaborative review',
-    description: 'During the design phase we invite the client to review and provide feedback. This allows a better structure and functionality early on.',
+    description: 'During the design phase, we invite you to review and provide feedback for a better structure and functionality.',
     gradient: 'from-rose-500 to-pink-500',
   },
   {
     icon: Sparkles,
-    title: 'Make it pop',
-    description: 'Establishing a structure focused on functionality and accessibility, including interactions that ensure total immersion using cutting-edge technologies.',
+    title: 'Design & Development',
+    description: 'We establish a structure focused on functionality and accessibility, using cutting-edge technologies for total immersion.',
     gradient: 'from-cyan-500 to-blue-500',
   },
   {

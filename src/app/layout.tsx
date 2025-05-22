@@ -7,7 +7,9 @@ import { Toaster } from '@/components/ui/toaster';
 
 const figtree = Figtree({
   subsets: ['latin'],
+  display: 'swap',
   variable: '--font-figtree',
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -21,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${figtree.variable} font-sans antialiased flex flex-col min-h-screen bg-background text-foreground`}>
+    <html lang="en" className={`${figtree.variable} dark`}>
+      <body className="font-sans antialiased flex flex-col min-h-screen bg-background text-foreground">
         <Navbar />
         <main className="flex-grow">
           {children}

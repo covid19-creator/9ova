@@ -6,7 +6,7 @@ const projects = [
     id: '1',
     title: 'Nebula Platform',
     description: 'A cutting-edge SaaS platform for cloud resource management and optimization, built with a focus on scalability and user experience.',
-    imageUrl: 'https://placehold.co/800x600.png',
+    imageUrl: '/image-1.png',
     imageHint: 'cloud platform',
     projectUrl: '#',
   },
@@ -59,11 +59,10 @@ export function ProjectShowcaseSection() {
         <div className="space-y-8 animate-in fade-in-0 duration-1000">
           <div>
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
-              Projects
+            Projects
             </h2>
             <p className="text-muted-foreground max-w-2xl">
-              Explore our portfolio of innovative projects that showcase our expertise in creating impactful digital experiences.
-            </p>
+            Our portfolio speaks for itself. Here are just a few examples of how we’ve helped businesses like yours achieve their digital goals.            </p>
           </div>
           
           <div className="relative">

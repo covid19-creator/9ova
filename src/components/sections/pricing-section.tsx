@@ -69,7 +69,7 @@ export function PricingSection() {
               <div className="flex items-center space-x-2 mb-3">
                 <Sparkles className="h-4 w-4 text-primary" />
                 <span className="text-xs bg-muted px-2 py-1 rounded-md font-medium text-foreground">
-                  Next.js Project
+                  Next-gen Tech
                 </span>
               </div>
               <div className="flex justify-between items-baseline">

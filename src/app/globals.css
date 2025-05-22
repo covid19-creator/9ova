@@ -116,49 +116,46 @@
   }
 
   .dark {
-    --background: 222 47% 11%; /* #1E293B - Deep slate */
-    --foreground: 220 14% 98%; /* #F8FAFC */
+    /* Core Background Colors */
+    --background: 222 47% 5%; /* Darker slate - almost black */
+    --foreground: 220 14% 98%; /* #F8FAFC - Light gray */
 
-    --card: 222 47% 15%; /* Slightly lighter than background */
+    /* Card Colors */
+    --card: 222 47% 8%; /* Slightly lighter than background */
     --card-foreground: 220 14% 98%;
 
-    --popover: 222 47% 11%;
+    /* Popover Colors */
+    --popover: 222 47% 5%;
     --popover-foreground: 220 14% 98%;
 
+    /* Primary Colors - Deep Blue */
     --primary: 221 83% 53%; /* #2563EB - Royal blue */
-    --primary-foreground: 222 47% 11%;
-    --primary-hover: 221 83% 63%; /* Lighter blue for hover */
+    --primary-foreground: 220 14% 98%;
+    --primary-hover: 221 83% 63%;
 
+    /* Secondary Colors - Soft Mint */
     --secondary: 160 84% 39%; /* #10B981 - Mint green */
-    --secondary-foreground: 222 47% 11%;
-    --secondary-hover: 160 84% 49%; /* Lighter mint for hover */
+    --secondary-foreground: 220 14% 98%;
+    --secondary-hover: 160 84% 49%;
 
-    --muted: 222 47% 20%;
+    /* Muted Colors */
+    --muted: 222 47% 12%;
     --muted-foreground: 215 16% 70%;
 
+    /* Accent Colors - Warm Coral */
     --accent: 24 95% 53%; /* #EA580C - Warm coral */
     --accent-foreground: 220 14% 98%;
-    --accent-hover: 24 95% 63%; /* Lighter coral for hover */
+    --accent-hover: 24 95% 63%;
 
-    --success: 142 76% 36%; /* #15803D - Emerald */
-    --success-foreground: 220 14% 98%;
-    --success-hover: 142 76% 46%; /* Lighter emerald for hover */
-
-    --warning: 48 96% 53%; /* #D97706 - Amber */
-    --warning-foreground: 220 14% 98%;
-    --warning-hover: 48 96% 63%; /* Lighter amber for hover */
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 220 14% 98%;
-    --destructive-hover: 0 84% 70%;
-
-    --info: 199 89% 48%; /* #0284C7 - Sky blue */
-    --info-foreground: 220 14% 98%;
-    --info-hover: 199 89% 58%; /* Lighter sky blue for hover */
-
-    --border: 222 47% 20%;
-    --input: 222 47% 20%;
+    /* Border and Input Colors */
+    --border: 222 47% 15%;
+    --input: 222 47% 15%;
     --ring: 221 83% 53%;
+
+    /* Gradient Colors - Dark Theme */
+    --gradient-start: 221 83% 53%; /* Royal blue */
+    --gradient-middle: 160 84% 39%; /* Mint green */
+    --gradient-end: 24 95% 53%; /* Warm coral */
 
     /* Status Colors - Dark Mode */
     --status-active: 142 76% 46%; /* Lighter emerald */
@@ -195,24 +192,49 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(at 0% 0%, hsl(var(--gradient-start) / 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsl(var(--gradient-middle) / 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsl(var(--gradient-end) / 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(var(--gradient-start) / 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-[var(--text-primary)];
+    @apply text-foreground;
   }
 }
 
 @layer components {
   .card {
     @apply bg-card text-card-foreground rounded-lg shadow-sm hover:shadow-md transition-all duration-200;
+    background-image: 
+      radial-gradient(at 0% 0%, hsl(var(--gradient-start) / 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsl(var(--gradient-end) / 0.05) 0px, transparent 50%);
   }
 
   .section {
-    @apply bg-background;
+    @apply bg-background relative;
+    &::before {
+      content: '';
+      @apply absolute inset-0 opacity-30;
+      background-image: 
+        radial-gradient(at 0% 0%, hsl(var(--gradient-start) / 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, hsl(var(--gradient-end) / 0.05) 0px, transparent 50%);
+      pointer-events: none;
+    }
   }
 
   .section-alt {
-    @apply bg-muted;
+    @apply bg-muted relative;
+    &::before {
+      content: '';
+      @apply absolute inset-0 opacity-30;
+      background-image: 
+        radial-gradient(at 100% 0%, hsl(var(--gradient-middle) / 0.05) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsl(var(--gradient-start) / 0.05) 0px, transparent 50%);
+      pointer-events: none;
+    }
   }
 
   .gradient-text {

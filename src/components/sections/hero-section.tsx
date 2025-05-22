@@ -2,14 +2,14 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 const words = [
-  { text: "Building", gradient: "from-blue-600 to-cyan-500" },
-  { text: "websites", gradient: "from-purple-600 to-pink-500" },
-  { text: "&", gradient: "from-orange-600 to-red-500" },
-  { text: "apps", gradient: "from-green-600 to-emerald-500" },
-  { text: "for", gradient: "from-yellow-600 to-orange-500" },
-  { text: "immersive", gradient: "from-indigo-600 to-purple-500" },
-  { text: "digital", gradient: "from-rose-600 to-pink-500" },
-  { text: "experiences.", gradient: "from-cyan-600 to-blue-500" },
+  { text: "Let's", gradient: "from-blue-600 to-cyan-500" },
+  { text: "Build", gradient: "from-purple-600 to-pink-500" },
+  { text: "You", gradient: "from-orange-600 to-red-500" },
+  { text: "a", gradient: "from-green-600 to-emerald-500" },
+  { text: "Digital", gradient: "from-yellow-600 to-orange-500" },
+  { text: "Experience", gradient: "from-indigo-600 to-purple-500" },
+  { text: "That", gradient: "from-rose-600 to-pink-500" },
+  { text: "Converts.", gradient: "from-cyan-600 to-blue-500" },
 ];
 
 export function HeroSection() {
@@ -56,7 +56,7 @@ export function HeroSection() {
             </div>
           </h1>
           <p className="text-foreground/70 md:text-xl lg:text-2xl hover:text-foreground/90 transition-colors duration-300">
-            We design, build & ship websites and apps that<br/> shape the future of your business.
+          We create stunning websites and apps that not only look great but also drive measurable results for your business. Whether you’re starting from scratch or need a redesign, we’re here to transform your online presence into a powerful tool that attracts and converts your target audience.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-200">
