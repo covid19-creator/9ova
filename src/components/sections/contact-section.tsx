@@ -2,9 +2,8 @@ import { ContactForm } from '@/components/forms/contact-form';
 import { Mail, MapPin, Building } from 'lucide-react';
 
 export function ContactSection() {
-  const companyEmail = "hello@landingspark.studio";
-  const companyAddress = "123 Innovation Drive, Tech City, TX 75001";
-  const companyName = "LandingSpark Inc.";
+  const companyEmail = "ranagaurav687@gmail.com";
+  const companyName = "9ova Tech Solutions";
 
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-card to-background">
@@ -36,13 +35,6 @@ export function ContactSection() {
                   <a href={`mailto:${companyEmail}`} className="hover:text-primary transition-colors">
                     {companyEmail}
                   </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-6 w-6 mt-1 text-accent flex-shrink-0" />
-                <div>
-                  <p className="font-semibold">Address</p>
-                  <p>{companyAddress}</p>
                 </div>
               </div>
             </div>

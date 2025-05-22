@@ -37,13 +37,28 @@ export function ContactForm() {
   });
 
   async function onSubmit(data: ContactFormValues) {
-    // In a real application, you would send this data to a server
-    console.log("Contact form submitted:", data);
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. We'll get back to you soon.",
-    });
-    form.reset();
+    try {
+      // Create mailto link with form data
+      const subject = `New Contact Form Submission from ${data.name}`;
+      const body = `Name: ${data.name}%0D%0AEmail: ${data.email}%0D%0A%0D%0AMessage:%0D%0A${data.message}`;
+      const mailtoLink = `mailto:ranagaurav687@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open default email client
+      window.location.href = mailtoLink;
+
+      toast({
+        title: "Message Prepared!",
+        description: "Your email client should open with the message. Please send it to complete the process.",
+      });
+      
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an error preparing your message. Please try again.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
@@ -93,7 +108,7 @@ export function ContactForm() {
           )}
         />
         <Button type="submit" size="lg" className="w-full shadow-md hover:shadow-primary/50 transition-shadow" disabled={form.formState.isSubmitting}>
-          {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+          {form.formState.isSubmitting ? "Preparing..." : "Send Message"}
           {!form.formState.isSubmitting && <Send className="ml-2 h-5 w-5" />}
         </Button>
       </form>

@@ -1,68 +1,98 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const projects = [
   {
     id: '1',
-    title: 'Nebula Platform',
-    description: 'A cutting-edge SaaS platform for cloud resource management and optimization, built with a focus on scalability and user experience.',
+    title: 'GemPro Marketing Agency',
+    description: 'A full-service digital marketing agency specializing in brand development, social media management, and strategic marketing solutions for businesses of all sizes.',
     imageUrl: '/image-1.png',
-    imageHint: 'cloud platform',
-    projectUrl: '#',
+    imageHint: 'marketing agency',
+    projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about GemPro Marketing Agency Project',
+    type: 'website'
   },
   {
     id: '2',
-    title: 'QuantumLeap AI',
-    description: 'An AI-driven analytics tool that provides deep insights from complex datasets, empowering businesses to make smarter decisions.',
-    imageUrl: 'https://placehold.co/800x600.png',
-    imageHint: 'AI analytics',
-    projectUrl: '#',
+    title: 'Belle Beauty & Skincare',
+    description: 'A mobile application revolutionizing the beauty industry by connecting users with premium skincare products and personalized beauty recommendations.',
+    imageUrl: '/belle-beauty.png',
+    imageHint: 'beauty skincare app',
+    projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about Belle Beauty & Skincare App',
+    type: 'mobile'
   },
   {
     id: '3',
-    title: 'EcoShift Marketplace',
-    description: 'An e-commerce platform connecting sustainable brands with conscious consumers, promoting eco-friendly products and practices.',
-    imageUrl: 'https://placehold.co/800x600.png',
-    imageHint: 'ecommerce sustainable',
-    projectUrl: '#',
+    title: 'Bloom Health Hospital',
+    description: 'A modern healthcare platform providing comprehensive medical services, patient care management, and telemedicine solutions for improved healthcare accessibility.',
+    imageUrl: '/image-4.png',
+    imageHint: 'healthcare hospital',
+    projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about Bloom Health Hospital Project',
+    type: 'website'
   },
   {
     id: '4',
-    title: 'Synergy CRM',
-    description: 'A comprehensive Customer Relationship Management system designed for small to medium-sized enterprises to enhance client engagement.',
-    imageUrl: 'https://placehold.co/800x600.png',
-    imageHint: 'CRM software',
-    projectUrl: '#',
+    title: 'Connect',
+    description: 'A social networking mobile app designed to help people build meaningful connections, share experiences, and engage with communities of shared interests.',
+    imageUrl: '/connect.jpg',
+    imageHint: 'social networking app',
+    projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about Connect App',
+    type: 'mobile'
   },
   {
     id: '5',
-    title: 'Nova VR Experience',
-    description: 'An immersive virtual reality experience for architectural visualization, allowing clients to walk through designs before construction.',
-    imageUrl: 'https://placehold.co/800x600.png',
-    imageHint: 'VR architecture',
-    projectUrl: '#',
+    title: 'NXThorizon Consultancy',
+    description: 'A strategic business consultancy firm offering expert guidance in digital transformation, process optimization, and business growth strategies.',
+    imageUrl: '/image-2.png',
+    imageHint: 'business consultancy',
+    projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about NXThorizon Consultancy Project',
+    type: 'website'
   },
   {
     id: '6',
-    title: 'Helios Solar Monitoring',
-    description: 'A web application for real-time monitoring and analytics of solar panel performance, optimizing energy generation.',
-    imageUrl: 'https://placehold.co/800x600.png',
-    imageHint: 'solar energy',
-    projectUrl: '#',
+    title: 'Musico',
+    description: 'A music streaming and discovery app that helps music lovers explore new artists, create playlists, and connect with fellow music enthusiasts.',
+    imageUrl: '/musico.png',
+    imageHint: 'music streaming app',
+    projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about Musico App',
+    type: 'mobile'
+  },
+  {
+    id: '7',
+    title: 'Coupengini',
+    description: 'An innovative affiliate marketing platform that connects brands with influencers, enabling seamless collaboration and performance-based marketing campaigns.',
+    imageUrl: '/coupengini.png',
+    imageHint: 'affiliate marketing platform',
+    projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about Coupengini Project',
+    type: 'website'
+  },
+  {
+    id: '8',
+    title: 'JewelMe',
+    description: 'An online marketplace dedicated to home decor enthusiasts, offering curated collections of unique furniture, art pieces, and decorative items for every style.',
+    imageUrl: '/jewelme.png',
+    imageHint: 'home decor marketplace',
+    projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about JewelMe Project',
+    type: 'website'
   },
 ];
 
 export function ProjectShowcaseSection() {
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+
   return (
     <section id="projects" className="w-full py-12 md:py-16 lg:py-20 bg-background flex justify-center">
       <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[85%] xl:w-[70%]">
         <div className="space-y-8 animate-in fade-in-0 duration-1000">
           <div>
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
-            Projects
+              Projects
             </h2>
             <p className="text-muted-foreground max-w-2xl">
-            Our portfolio speaks for itself. Here are just a few examples of how we’ve helped businesses like yours achieve their digital goals.            </p>
+              Our portfolio speaks for itself. Here are just a few examples of how we've helped businesses like yours achieve their digital goals.
+            </p>
           </div>
           
           <div className="relative">
@@ -72,40 +102,48 @@ export function ProjectShowcaseSection() {
                   key={project.id} 
                   className="flex-none w-[300px] md:w-[400px] snap-start"
                 >
-                  <Link href={project.projectUrl} passHref legacyBehavior>
-                    <a target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg group">
-                      <div className="relative">
-                        <Image
-                          alt={project.title}
-                          className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                          height={600}
-                          src={project.imageUrl}
-                          data-ai-hint={project.imageHint}
-                          width={800}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                        <div className="absolute inset-0 bg-gradient-radial from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"
-                             style={{
-                               backgroundSize: '400px 400px',
-                               backgroundPosition: 'var(--mouse-x, 50%) var(--mouse-y, 50%)',
-                             }}
-                        />
-                        <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                          <h3 className="text-2xl font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                            {project.title}
-                          </h3>
-                          <p className="text-white/90 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                            {project.description}
-                          </p>
-                          <div className="mt-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-200">
-                            <span className="inline-block px-4 py-2 bg-primary/20 text-white rounded-full text-sm font-medium backdrop-blur-sm">
-                              View Project
-                            </span>
-                          </div>
+                  <div className="block overflow-hidden rounded-lg group">
+                    <div className="relative">
+                      <Image
+                        alt={project.title}
+                        className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 cursor-pointer"
+                        height={600}
+                        src={project.imageUrl}
+                        data-ai-hint={project.imageHint}
+                        width={800}
+                        onClick={() => setSelectedProject(project)}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                      <div className="absolute inset-0 bg-gradient-radial from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"
+                           style={{
+                             backgroundSize: '400px 400px',
+                             backgroundPosition: 'var(--mouse-x, 50%) var(--mouse-y, 50%)',
+                           }}
+                      />
+                      <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <h3 className="text-2xl font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                          {project.title}
+                        </h3>
+                        <p className="text-white/90 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                          {project.description}
+                        </p>
+                        <div className="mt-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-200 flex gap-2">
+                          <button
+                            onClick={() => setSelectedProject(project)}
+                            className="inline-block px-4 py-2 bg-primary/20 text-white rounded-full text-sm font-medium backdrop-blur-sm hover:bg-primary/30 transition-colors duration-200"
+                          >
+                            View Details
+                          </button>
+                          <Link
+                            href={project.projectUrl}
+                            className="inline-block px-4 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors duration-200"
+                          >
+                            Contact
+                          </Link>
                         </div>
                       </div>
-                    </a>
-                  </Link>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -116,6 +154,50 @@ export function ProjectShowcaseSection() {
           </div>
         </div>
       </div>
+
+      {/* Project Image Modal */}
+      {selectedProject && (
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+            className="relative max-w-4xl w-full max-h-[90vh] rounded-lg overflow-hidden animate-in zoom-in-50 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-4 right-4 z-10 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition-colors duration-200"
+              onClick={() => setSelectedProject(null)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src={selectedProject.imageUrl}
+                alt={selectedProject.title}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+              <h3 className="text-2xl font-bold text-white mb-2">{selectedProject.title}</h3>
+              <p className="text-white/90 mb-4">{selectedProject.description}</p>
+              <div className="flex gap-2">
+                <Link
+                  href={selectedProject.projectUrl}
+                  className="inline-block px-6 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors duration-200"
+                >
+                  Contact About This Project
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
