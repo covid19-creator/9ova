@@ -9,7 +9,7 @@ const projects = [
     id: '1',
     title: 'GemPro Marketing Agency',
     description: 'A full-service digital marketing agency specializing in brand development, social media management, and strategic marketing solutions for businesses of all sizes.',
-    imageUrl: '/image-1.png',
+    imageUrl: '/Image-1.png',
     imageHint: 'marketing agency',
     projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about GemPro Marketing Agency Project',
     type: 'website'
@@ -18,7 +18,7 @@ const projects = [
     id: '2',
     title: 'Belle Beauty & Skincare',
     description: 'A mobile application revolutionizing the beauty industry by connecting users with premium skincare products and personalized beauty recommendations.',
-    imageUrl: '/belle-beauty.png',
+    imageUrl: '/Belle-Beauty.png',
     imageHint: 'beauty skincare app',
     projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about Belle Beauty & Skincare App',
     type: 'mobile'
@@ -27,7 +27,7 @@ const projects = [
     id: '3',
     title: 'Bloom Health Hospital',
     description: 'A modern healthcare platform providing comprehensive medical services, patient care management, and telemedicine solutions for improved healthcare accessibility.',
-    imageUrl: '/image-4.png',
+    imageUrl: '/Image-4.png',
     imageHint: 'healthcare hospital',
     projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about Bloom Health Hospital Project',
     type: 'website'
@@ -45,7 +45,7 @@ const projects = [
     id: '5',
     title: 'NXThorizon Consultancy',
     description: 'A strategic business consultancy firm offering expert guidance in digital transformation, process optimization, and business growth strategies.',
-    imageUrl: '/image-2.png',
+    imageUrl: '/Image-2.png',
     imageHint: 'business consultancy',
     projectUrl: 'mailto:ranagaurav687@gmail.com?subject=Inquiry about NXThorizon Consultancy Project',
     type: 'website'
