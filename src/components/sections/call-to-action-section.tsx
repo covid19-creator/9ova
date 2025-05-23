@@ -1,42 +1,133 @@
-import { CheckSquare } from "lucide-react";
+'use client';
+
+import { CheckSquare, ArrowRight, Sparkles, Calendar, Rocket, Star, Zap, Lightbulb, Target, Sparkles as SparklesIcon, Heart, Trophy } from "lucide-react";
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+
+const slidingTexts = [
+  { text: "Let's Build Something Amazing", icon: Rocket },
+  { text: "Transform Your Vision", icon: SparklesIcon },
+  { text: "Create Digital Excellence", icon: Star },
+  { text: "Design Your Future", icon: Lightbulb },
+  { text: "Innovate Together", icon: Zap },
+  { text: "Craft Your Success", icon: Target },
+  { text: "Elevate Your Brand", icon: Trophy },
+  { text: "Make an Impact", icon: Heart },
+];
 
 export function CallToActionSection() {
   const currentYear = new Date().getFullYear();
+  const sectionRef = useIntersectionObserver();
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    let animationFrame: number;
+    let position = 0;
+    const speed = 0.5; // pixels per frame
+    const totalWidth = slider.scrollWidth / 2;
+
+    const animate = () => {
+      position -= speed;
+      if (position <= -totalWidth) {
+        position = 0;
+      }
+      slider.style.transform = `translateX(${position}px)`;
+      animationFrame = requestAnimationFrame(animate);
+    };
+
+    // Start animation
+    animationFrame = requestAnimationFrame(animate);
+
+    // Cleanup
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
+  }, []);
 
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-[hsl(var(--cta-background))] text-[hsl(var(--cta-foreground))] flex justify-center">
-      <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[85%] xl:w-[70%] text-center space-y-8">
-        <div className="flex items-center justify-center gap-2 animate-in fade-in-0 zoom-in-75 duration-700 group">
-          <CheckSquare className="h-8 w-8 md:h-10 md:w-10 hover:scale-110 hover:rotate-12 transition-all duration-300" />
-          <span className="text-3xl md:text-4xl font-semibold hover:text-accent transition-colors duration-300 relative">
-            9ova Tech Solutions
-            <span className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
+    <section ref={sectionRef} className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-b from-background to-background/95 text-foreground flex justify-center relative overflow-hidden">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-primary/10 to-primary/5" />
+      
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -inset-[100px] opacity-50">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent animate-pulse" />
+        </div>
+      </div>
+
+      <div className="w-[85%] relative z-10">
+        {/* Company name with sparkle effect */}
+        <div className="flex items-center justify-center gap-2 mb-8 animate-in fade-in-0 zoom-in-75 duration-700 group">
+          <Sparkles className="h-6 w-6 text-primary animate-pulse" />
+          <span className="text-2xl md:text-3xl font-semibold text-foreground/90">
+            9ova
           </span>
         </div>
 
-        <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight animate-in fade-in-0 slide-in-from-bottom-5 duration-700 delay-200 group relative">
-          <span className="relative inline-block">
-          Let’s Build Something Amazing Together
-            <span className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
-          </span>
-        </h2>
+        {/* Infinite sliding text */}
+        <div className="relative overflow-hidden py-8 mb-12">
+          <div 
+            ref={sliderRef}
+            className="flex whitespace-nowrap will-change-transform"
+            style={{ transform: 'translateX(0)' }}
+          >
+            {[...slidingTexts, ...slidingTexts].map((item, index) => (
+              <div
+                key={index}
+                className="inline-flex items-center"
+              >
+                <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground/90 group-hover:text-primary transition-colors duration-300">
+                  {item.text}
+                </span>
+                <item.icon className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 text-primary/50 group-hover:text-primary transition-colors duration-300 mx-4" />
+              </div>
+            ))}
+          </div>
+        </div>
 
-        <a
-          href="mailto:ranagaurav687@gmail.com"
-          className="inline-block text-xl md:text-2xl font-medium hover:underline hover:scale-105 hover:text-accent transition-all duration-300 underline-offset-4 animate-in fade-in-0 slide-in-from-bottom-5 duration-700 delay-400 group relative"
-        >
-          <span className="relative">
-            ranagaurav687@gmail.com
-            <span className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
-          </span>
-        </a>
+        {/* CTA Content */}
+        <div className="text-center space-y-6 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground">
+            Ready to transform your ideas into reality? Let's start a conversation about your project.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 hover:border-primary/30 transition-all duration-300 group"
+            >
+              <a href="mailto:ranagaurav687@gmail.com">
+                <span className="flex items-center gap-2">
+                  Let's Discuss Your Project
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </a>
+            </Button>
+            
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-background/50 hover:bg-background/80 border-primary/20 hover:border-primary/30 transition-all duration-300 group"
+            >
+              <a href="https://calendly.com/ranagaurav687/30min" target="_blank" rel="noopener noreferrer">
+                <span className="flex items-center gap-2">
+                  Schedule a Free Consultation
+                  <Calendar className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+                </span>
+              </a>
+            </Button>
+          </div>
 
-        <div className="pt-8 md:pt-12 animate-in fade-in-0 duration-700 delay-600">
-          <p className="text-sm text-[hsl(var(--cta-foreground),0.8)] hover:text-[hsl(var(--cta-foreground))] transition-colors duration-300 group relative inline-block">
-            <span className="relative">
-              © {currentYear} 9ova Tech Solutions. All rights reserved.
-              <span className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
-            </span>
+          <p className="text-sm text-muted-foreground/70 mt-8">
+            © {currentYear} 9ova. All rights reserved.
           </p>
         </div>
       </div>

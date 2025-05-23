@@ -3,12 +3,13 @@
 import { Zap, PenTool, BarChartHorizontalBig, CircleDot, MessageSquareText, ClipboardCheck, Sparkles, Repeat, Send, Asterisk } from 'lucide-react';
 import { GradientCard } from '@/components/ui/gradient-card';
 import { useCounter } from '@/hooks/use-counter';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 const benefits = [
   {
     icon: Zap,
     title: 'Fast turnaround',
-    description: 'Our portfolio speaks for itself. Here are just a few examples of how we’ve helped businesses like yours achieve their digital goals.',
+    description: "Our portfolio speaks for itself. Here are just a few examples of how we've helped businesses like yours achieve their digital goals.",
     gradient: 'from-blue-500 to-cyan-500',
   },
   {
@@ -81,10 +82,11 @@ export function BenefitsSection() {
   const projectsCount = useCounter(37, 2000);
   const conversionCount = useCounter(94, 2000);
   const yearsCount = useCounter(12, 2000);
+  const sectionRef = useIntersectionObserver();
 
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-background flex justify-center">
-      <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[85%] xl:w-[70%] space-y-12">
+    <section ref={sectionRef} className="w-full py-12 md:py-16 lg:py-20 bg-background flex justify-center">
+      <div className="w-[85%] space-y-12">
         {/* Benefits Title */}
         <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl animate-in fade-in-0 slide-in-from-bottom-2 duration-700 hover:scale-[1.02] transition-transform duration-300">
           Benefits
@@ -109,7 +111,7 @@ export function BenefitsSection() {
         </div>
 
         {/* Large Text Block */}
-        <div className="text-center py-8 animate-in fade-in-0 duration-1000 delay-200">
+        <div className="text-left py-8 animate-in fade-in-0 duration-1000 delay-200">
           <p className="relative text-3xl md:text-4xl lg:text-5xl font-bold leading-normal">
             <span className="relative inline-block">
               <span className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x">
@@ -120,7 +122,8 @@ export function BenefitsSection() {
               </span>
             </span>
             <span className="block mt-2 text-foreground/40 hover:text-foreground/60 transition-colors duration-300">
-              THAT NOT ONLY LOOK GREAT BUT ALSO DELIVER MEASURABLE RESULTS.
+              THAT NOT ONLY LOOK GREAT
+              <br/> BUT ALSO DELIVER MEASURABLE RESULTS.
             </span>
           </p>
         </div>
@@ -131,10 +134,10 @@ export function BenefitsSection() {
             className="animate-in fade-in-0 slide-in-from-bottom-5 duration-500 hover:scale-105 transition-transform duration-300"
             style={{ animationDelay: '300ms' }}
           >
-            <p className="text-6xl md:text-7xl font-bold text-foreground hover:text-primary transition-colors duration-300">
+            <p className="text-7xl md:text-8xl lg:text-9xl font-bold text-foreground hover:text-primary transition-colors duration-300">
               {projectsCount}{stats[0].suffix}
             </p>
-            <p className="text-sm text-muted-foreground mt-1 hover:text-foreground/80 transition-colors duration-300">
+            <p className="text-lg text-muted-foreground mt-2 hover:text-foreground/80 transition-colors duration-300">
               {stats[0].label}
             </p>
           </div>
@@ -142,10 +145,10 @@ export function BenefitsSection() {
             className="animate-in fade-in-0 slide-in-from-bottom-5 duration-500 hover:scale-105 transition-transform duration-300"
             style={{ animationDelay: '450ms' }}
           >
-            <p className="text-6xl md:text-7xl font-bold text-foreground hover:text-primary transition-colors duration-300">
+            <p className="text-7xl md:text-8xl lg:text-9xl font-bold text-foreground hover:text-primary transition-colors duration-300">
               {conversionCount}{stats[1].suffix}
             </p>
-            <p className="text-sm text-muted-foreground mt-1 hover:text-foreground/80 transition-colors duration-300">
+            <p className="text-lg text-muted-foreground mt-2 hover:text-foreground/80 transition-colors duration-300">
               {stats[1].label}
             </p>
           </div>
@@ -153,10 +156,10 @@ export function BenefitsSection() {
             className="animate-in fade-in-0 slide-in-from-bottom-5 duration-500 hover:scale-105 transition-transform duration-300"
             style={{ animationDelay: '600ms' }}
           >
-            <p className="text-6xl md:text-7xl font-bold text-foreground hover:text-primary transition-colors duration-300">
+            <p className="text-7xl md:text-8xl lg:text-9xl font-bold text-foreground hover:text-primary transition-colors duration-300">
               {yearsCount}{stats[2].suffix}
             </p>
-            <p className="text-sm text-muted-foreground mt-1 hover:text-foreground/80 transition-colors duration-300">
+            <p className="text-lg text-muted-foreground mt-2 hover:text-foreground/80 transition-colors duration-300">
               {stats[2].label}
             </p>
           </div>
@@ -175,20 +178,24 @@ export function BenefitsSection() {
             ))}
           </div>
           <GradientCard 
-            className="md:col-span-2 p-8 rounded-xl bg-[hsl(84_100%_59%)] text-black relative shadow-lg hover:shadow-xl transition-all duration-300 animate-in slide-in-from-right-4 duration-700 [animation-delay:800ms]"
+            className="md:col-span-2 p-8 rounded-xl bg-card relative shadow-lg hover:shadow-xl transition-all duration-300 animate-in slide-in-from-right-4 duration-700 [animation-delay:800ms] overflow-hidden group border border-primary/10 hover:border-primary/30"
           >
-            <Asterisk className="absolute top-6 right-6 h-8 w-8 hover:rotate-180 transition-transform duration-500" />
-            <h3 className="text-4xl font-bold mb-6 hover:text-black/80 transition-colors duration-300">Fields</h3>
-            <ul className="space-y-2">
-              {fields.map((field, index) => (
-                <li 
-                  key={field} 
-                  className={`text-lg font-medium hover:text-black/80 hover:translate-x-2 transition-all duration-300 cursor-pointer animate-in slide-in-from-right-4 duration-500 [animation-delay:${index * 100 + 900}ms]`}
-                >
-                  {field}
-                </li>
-              ))}
-            </ul>
+            <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-500 ease-out"
+                 style={{ backgroundImage: 'linear-gradient(to right, from-indigo-500 to-purple-500)' }} />
+            <Asterisk className="absolute top-6 right-6 h-8 w-8 text-primary/60 group-hover:rotate-180 transition-transform duration-500" />
+            <div className="relative z-10">
+              <h3 className="text-4xl font-bold mb-6 text-foreground group-hover:text-foreground/90 transition-colors duration-300">Fields</h3>
+              <ul className="space-y-2">
+                {fields.map((field, index) => (
+                  <li 
+                    key={field} 
+                    className={`text-lg font-medium text-foreground/80 hover:text-foreground hover:translate-x-2 transition-all duration-300 cursor-pointer animate-in slide-in-from-right-4 duration-500 [animation-delay:${index * 100 + 900}ms]`}
+                  >
+                    {field}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </GradientCard>
         </div>
 
@@ -209,6 +216,7 @@ export function BenefitsSection() {
                 ${index === 3 ? 'sm:col-span-1 lg:col-span-2' : ''}
                 [animation-delay:${index * 200 + 600}ms]
                 hover:scale-[1.02] hover:-translate-y-1
+                border border-primary/10 hover:border-primary/30
               `}
             >
               <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-500 ease-out"
@@ -230,7 +238,7 @@ export function BenefitsSection() {
             </GradientCard>
           ))}
           <GradientCard
-            className="group relative flex flex-col p-6 rounded-xl bg-[hsl(0_0%_21%)] text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 sm:col-span-2 lg:col-span-4 animate-in fade-in-0 slide-in-from-bottom-5 duration-500 cursor-pointer overflow-hidden [animation-delay:1400ms] hover:scale-[1.02] hover:-translate-y-1"
+            className="group relative flex flex-col p-6 rounded-xl bg-[hsl(0_0%_21%)] text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 sm:col-span-2 lg:col-span-4 animate-in fade-in-0 slide-in-from-bottom-5 duration-500 cursor-pointer overflow-hidden [animation-delay:1400ms] hover:scale-[1.02] hover:-translate-y-1 border border-primary/20 hover:border-primary/40"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-30 transition-opacity duration-500 ease-out" />
             <div className="relative z-10">

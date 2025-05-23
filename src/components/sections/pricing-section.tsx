@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -25,6 +27,7 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 const EMAIL_ADDRESS = "ranagaurav687@gmail.com";
 const mailto = (
@@ -36,12 +39,15 @@ const mailto = (
   )}&body=${encodeURIComponent(body)}`;
 
 export function PricingSection() {
+  const sectionRef = useIntersectionObserver();
+
   return (
     <section
+      ref={sectionRef}
       id="pricing"
       className="w-full py-12 md:py-24 bg-background flex justify-center"
     >
-      <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[85%] xl:w-[70%]">
+      <div className="w-[85%]">
         <div className="text-left mb-12 md:mb-16 animate-in fade-in-0 slide-in-from-bottom-2 duration-700">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground">
             Pricing
@@ -311,10 +317,10 @@ export function PricingSection() {
                 </p>
 
                 <blockquote className="text-sm italic text-primary-foreground/80 border-l-4 border-primary-foreground/50 pl-4 mb-6 max-w-3xl">
-                  “I felt lost at first and wasn’t sure what I needed. But the
+                  "I felt lost at first and wasn't sure what I needed. But the
                   team listened, explained everything clearly, and helped me
                   pick the right option for my budget and goals — no rush, no
-                  hassle. Made the whole thing way less stressful.”
+                  hassle. Made the whole thing way less stressful."
                 </blockquote>
 
                 <ul className="flex flex-wrap gap-4 text-xs text-primary-foreground/80 max-w-3xl">

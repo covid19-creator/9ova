@@ -18,7 +18,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex justify-center transition-all duration-300">
-      <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[85%] xl:w-[70%] flex h-24 items-center justify-start transition-all duration-300">
+      <div className="w-[85%] flex h-24 items-center justify-start transition-all duration-300">
         <Link href="/" className="flex items-center">
           <img 
             src="/Logo-9-White.svg" 
