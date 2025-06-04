@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/navbar';
 // import { Footer } from '@/components/layout/footer'; Removed Footer
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import SmoothFollower from '../components/SmoothFollower';
 
 const figtree = Figtree({
   subsets: ['latin'],
@@ -48,6 +49,7 @@ export default function RootLayout({
         </main>
         {/* <Footer /> Removed Footer */}
         <Toaster />
+        <SmoothFollower />
       </body>
     </html>
   );
