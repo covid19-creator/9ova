@@ -40,7 +40,7 @@ export function FaqSection() {
   const sectionRef = useIntersectionObserver();
 
   return (
-    <section ref={sectionRef} className="w-full pb-16 md:pb-24 lg:pb-32 bg-background flex justify-center">
+    <section ref={sectionRef} className="w-full pb-16 md:pb-24 lg:pb-32 bg-black flex justify-center">
       <div className="w-[85%] space-y-16">
         {/* FAQ Section */}
         <div className="animate-in fade-in-0 slide-in-from-bottom-2 duration-700">

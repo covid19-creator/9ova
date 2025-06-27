@@ -139,14 +139,14 @@ export default function HomePage() {
 
   return (
     <>
-      <StickyBar onOpen={() => setPopupOpen(true)} />
+      {/* <StickyBar onOpen={() => setPopupOpen(true)} /> */}
       <HeroSection />
       <ProjectShowcaseSection />
       <BenefitsSection />
       <PricingSection />
       <FaqSection />
       <CallToActionSection />
-      <QuickAuditPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
+      {/* <QuickAuditPopup open={popupOpen} onClose={() => setPopupOpen(false)} /> */}
     </>
   );
 }

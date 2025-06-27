@@ -45,7 +45,7 @@ export function PricingSection() {
     <section
       ref={sectionRef}
       id="pricing"
-      className="w-full py-12 md:py-24 bg-background flex justify-center"
+      className="w-full py-12 md:py-24 bg-black flex justify-center"
     >
       <div className="w-[85%]">
         <div className="text-left mb-12 md:mb-16 animate-in fade-in-0 slide-in-from-bottom-2 duration-700">
@@ -62,7 +62,7 @@ export function PricingSection() {
           {" "}
           {/* Card 1: Landing Page */}
           <Card
-            className="bg-card text-card-foreground rounded-xl shadow-lg flex flex-col p-6 md:p-8 animate-in fade-in-0 slide-in-from-bottom-5 duration-500"
+            className="bg-card text-card-foreground shadow-lg flex flex-col p-6 md:p-8 animate-in fade-in-0 slide-in-from-bottom-5 duration-500"
             style={{ animationDelay: "100ms" }}
           >
             <CardHeader className="p-0 mb-4">
@@ -129,7 +129,7 @@ export function PricingSection() {
           </Card>
           {/* Card 2: Full Website */}
           <Card
-            className="bg-card text-card-foreground rounded-xl shadow-lg flex flex-col p-6 md:p-8 animate-in fade-in-0 slide-in-from-bottom-5 duration-500"
+            className="bg-card text-card-foreground shadow-lg flex flex-col p-6 md:p-8 animate-in fade-in-0 slide-in-from-bottom-5 duration-500"
             style={{ animationDelay: "250ms" }}
           >
             <CardHeader className="p-0 mb-4">
@@ -205,7 +205,7 @@ export function PricingSection() {
           </Card>
           {/* Card 3: Custom Application */}
           <Card
-            className="bg-primary text-primary-foreground rounded-xl shadow-lg flex flex-col p-6 md:p-8 animate-in fade-in-0 slide-in-from-bottom-5 duration-500"
+            className="bg-primary text-primary-foreground shadow-lg flex flex-col p-6 md:p-8 animate-in fade-in-0 slide-in-from-bottom-5 duration-500"
             style={{ animationDelay: "400ms" }}
           >
             <CardHeader className="p-0 mb-4">
@@ -260,7 +260,7 @@ export function PricingSection() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {/* Web Design */}
-          <Card className="bg-muted text-foreground rounded-xl shadow-lg flex flex-col h-full p-6 md:p-8 animate-in fade-in-0 slide-in-from-bottom-5 duration-500">
+          <Card className="bg-muted text-foreground shadow-lg flex flex-col h-full p-6 md:p-8 animate-in fade-in-0 slide-in-from-bottom-5 duration-500">
             <CardHeader className="p-0 mb-4">
               <div className="flex items-center justify-between mb-3">
                 <Layers3 className="h-8 w-8 text-foreground" />
@@ -300,7 +300,7 @@ export function PricingSection() {
           </Card>
 
           {/* Still unsure or on a tight budget */}
-          <Card className="bg-primary text-primary-foreground rounded-xl shadow-lg p-6 md:p-8 flex flex-col animate-in fade-in-0 slide-in-from-bottom-5 duration-500 lg:col-span-2">
+          <Card className="bg-primary text-primary-foreground  shadow-lg p-6 md:p-8 flex flex-col animate-in fade-in-0 slide-in-from-bottom-5 duration-500 lg:col-span-2">
             <div className="flex flex-col md:flex-row md:items-start md:gap-8">
               <div className="flex items-center flex-shrink-0 mr-4">
                 <Headphones className="h-10 w-10 text-primary-foreground/80" />

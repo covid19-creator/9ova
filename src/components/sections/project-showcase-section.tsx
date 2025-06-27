@@ -176,7 +176,7 @@ export function ProjectShowcaseSection() {
   };
 
   return (
-    <section ref={sectionRef} id="projects" className="w-full py-12 md:py-16 lg:py-20 bg-background">
+    <section ref={sectionRef} id="projects" className="w-full py-12 md:py-16 lg:py-20 bg-black">
       <div className="w-[85%] mx-auto">
         <div className="space-y-8 animate-in fade-in-0 duration-1000">
           <div>
@@ -216,7 +216,7 @@ export function ProjectShowcaseSection() {
                 key={project.id} 
                 className="flex-none w-[350px] md:w-[450px] snap-start"
               >
-                <div className="block overflow-hidden rounded-lg group border-2 border-white/20 hover:border-white/40 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm bg-white/10">
+                <div className="block overflow-hidden group border-2 border-white/20 hover:border-white/40 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm bg-white/10">
                   <div className="relative">
                     <Image
                       alt={project.title}

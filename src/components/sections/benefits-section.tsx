@@ -85,7 +85,7 @@ export function BenefitsSection() {
   const sectionRef = useIntersectionObserver();
 
   return (
-    <section ref={sectionRef} className="w-full py-12 md:py-16 lg:py-20 bg-background flex justify-center">
+    <section ref={sectionRef} className="w-full py-12 md:py-16 lg:py-20 bg-black flex justify-center">
       <div className="w-[85%] space-y-12">
         {/* Benefits Title */}
         <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl animate-in fade-in-0 slide-in-from-bottom-2 duration-700 hover:scale-[1.02] transition-transform duration-300">
@@ -97,7 +97,7 @@ export function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <GradientCard
               key={benefit.title}
-              className={`group relative flex flex-col items-start p-6 rounded-xl bg-card shadow-sm hover:shadow-xl transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-5 duration-500 cursor-pointer overflow-hidden [animation-delay:${index * 150}ms]`}
+              className={`group relative flex flex-col items-start p-6 bg-card shadow-sm hover:shadow-xl transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-5 duration-500 cursor-pointer overflow-hidden [animation-delay:${index * 150}ms]`}
             >
               <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-500 ease-out"
                    style={{ backgroundImage: `linear-gradient(to right, ${benefit.gradient})` }} />
@@ -178,7 +178,7 @@ export function BenefitsSection() {
             ))}
           </div>
           <GradientCard 
-            className="md:col-span-2 p-8 rounded-xl bg-card relative shadow-lg hover:shadow-xl transition-all duration-300 animate-in slide-in-from-right-4 duration-700 [animation-delay:800ms] overflow-hidden group border border-primary/10 hover:border-primary/30"
+            className="md:col-span-2 p-8 bg-card relative shadow-lg hover:shadow-xl transition-all duration-300 animate-in slide-in-from-right-4 duration-700 [animation-delay:800ms] overflow-hidden group border border-primary/10 hover:border-primary/30"
           >
             <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-500 ease-out"
                  style={{ backgroundImage: 'linear-gradient(to right, from-indigo-500 to-purple-500)' }} />
@@ -209,7 +209,7 @@ export function BenefitsSection() {
           {approaches.map((approach, index) => (
             <GradientCard
               key={approach.title}
-              className={`group relative flex flex-col p-6 rounded-xl bg-card shadow-sm hover:shadow-xl transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-5 duration-500 cursor-pointer overflow-hidden
+              className={`group relative flex flex-col p-6  bg-card shadow-sm hover:shadow-xl transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-5 duration-500 cursor-pointer overflow-hidden
                 ${index === 0 ? 'sm:col-span-2 lg:col-span-2' : ''}
                 ${index === 1 ? 'sm:col-span-2 lg:col-span-2' : ''}
                 ${index === 2 ? 'sm:col-span-1 lg:col-span-2' : ''}
@@ -223,7 +223,7 @@ export function BenefitsSection() {
                    style={{ backgroundImage: `linear-gradient(to right, ${approach.gradient})` }} />
               <div className="relative z-10">
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-lg bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300">
+                  <div className="p-2 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300">
                     <approach.icon className="h-6 w-6 text-primary group-hover:scale-110 group-hover:text-primary/80 transition-all duration-300" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground ml-3 group-hover:text-foreground/90 transition-colors duration-300">{approach.title}</h3>
@@ -238,12 +238,12 @@ export function BenefitsSection() {
             </GradientCard>
           ))}
           <GradientCard
-            className="group relative flex flex-col p-6 rounded-xl bg-[hsl(0_0%_21%)] text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 sm:col-span-2 lg:col-span-4 animate-in fade-in-0 slide-in-from-bottom-5 duration-500 cursor-pointer overflow-hidden [animation-delay:1400ms] hover:scale-[1.02] hover:-translate-y-1 border border-primary/20 hover:border-primary/40"
+            className="group relative flex flex-col p-6 bg-[hsl(0_0%_21%)] text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 sm:col-span-2 lg:col-span-4 animate-in fade-in-0 slide-in-from-bottom-5 duration-500 cursor-pointer overflow-hidden [animation-delay:1400ms] hover:scale-[1.02] hover:-translate-y-1 border border-primary/20 hover:border-primary/40"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-30 transition-opacity duration-500 ease-out" />
             <div className="relative z-10">
               <div className="flex items-center mb-4">
-                <div className="p-2 rounded-lg bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300">
+                <div className="p-2 bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300">
                   <Send className="h-7 w-7 text-primary-foreground group-hover:rotate-12 transition-transform duration-300" />
                 </div>
                 <h3 className="text-2xl text-blue-500 font-bold group-hover:text-primary-foreground/90 transition-colors duration-300 ml-3">Ready to take off</h3>
@@ -253,7 +253,7 @@ export function BenefitsSection() {
               </p>
               <a 
                 href="mailto:ranagaurav687@gmail.com" 
-                className="inline-flex items-center px-6 py-3 bg-primary/20 text-primary-foreground rounded-full text-sm font-medium backdrop-blur-sm hover:bg-primary/30 transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center px-6 py-3 bg-primary/20 text-primary-foreground text-sm font-medium backdrop-blur-sm hover:bg-primary/30 transition-all duration-300 hover:scale-105"
               >
                 Let's Talk
                 <Send className="ml-2 h-4 w-4" />

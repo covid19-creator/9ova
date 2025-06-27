@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${figtree.variable} dark`}>
-      <body className="font-sans antialiased flex flex-col min-h-screen bg-background text-foreground">
+      <body className="font-sans flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
           {children}

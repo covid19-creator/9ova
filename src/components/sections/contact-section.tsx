@@ -6,7 +6,16 @@ export function ContactSection() {
   const companyName = "9ova Tech Solutions";
 
   return (
-    <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-card to-background">
+    <section
+      id="contact"
+      className="w-full py-12 md:py-24 lg:py-32"
+      style={{
+        backgroundImage: 'url(/herobg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       <div className="w-[85%] mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary">Get in Touch</div>

@@ -50,7 +50,16 @@ export function CallToActionSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-b from-background to-background/95 text-foreground flex justify-center relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="w-full py-12 md:py-16 lg:py-20 text-foreground flex justify-center relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(/herobg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-primary/10 to-primary/5" />
       
@@ -101,7 +110,7 @@ export function CallToActionSection() {
             <Button
               asChild
               size="lg"
-              className="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 hover:border-primary/30 transition-all duration-300 group"
+              className="bg-primary text-white shadow-lg border border-primary/80 hover:bg-primary/90 hover:border-primary transition-all duration-300 group"
             >
               <a href="mailto:ranagaurav687@gmail.com">
                 <span className="flex items-center gap-2">
@@ -113,9 +122,8 @@ export function CallToActionSection() {
             
             <Button
               asChild
-              variant="outline"
               size="lg"
-              className="bg-background/50 hover:bg-background/80 border-primary/20 hover:border-primary/30 transition-all duration-300 group"
+              className="bg-black/60 text-white border border-white/30 hover:bg-black/80 shadow-lg transition-all duration-300 group"
             >
               <a href="https://calendly.com/ranagaurav687/30min" target="_blank" rel="noopener noreferrer">
                 <span className="flex items-center gap-2">

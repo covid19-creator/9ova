@@ -30,7 +30,7 @@ export function GradientCard({ children, className = '' }: GradientCardProps) {
   return (
     <div
       ref={cardRef}
-      className={`relative overflow-hidden rounded-xl ${className}`}
+      className={`relative overflow-hidden ${className}`}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div

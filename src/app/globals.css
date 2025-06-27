@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* Core Background Colors */
-    --background: 220 25% 97%; /* #F7F8FA - Soft blue-gray */
+    --background: 0 0% 0%; /* #000000 - Pure black */
     --foreground: 222 47% 11%; /* #1E293B - Deep slate */
 
     /* Card Colors */
@@ -192,12 +192,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: 
-      radial-gradient(at 0% 0%, hsl(var(--gradient-start) / 0.08) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsl(var(--gradient-middle) / 0.08) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsl(var(--gradient-end) / 0.08) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsl(var(--gradient-start) / 0.08) 0px, transparent 50%);
-    background-attachment: fixed;
+    /* background-image removed for pure black background */
   }
 
   h1, h2, h3, h4, h5, h6 {
