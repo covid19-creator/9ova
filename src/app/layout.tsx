@@ -6,6 +6,7 @@ import { Navbar } from '@/components/layout/navbar';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import SmoothFollower from '../components/SmoothFollower';
+import { Analytics } from "@vercel/analytics/next"
 
 const figtree = Figtree({
   subsets: ['latin'],
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">
           {children}
+          <Analytics />
         </main>
         {/* <Footer /> Removed Footer */}
         <Toaster />
